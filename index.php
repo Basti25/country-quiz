@@ -1,10 +1,17 @@
 <html>
     <head>
+        <script language="javascript" type="text/javascript" src="public/js/jquery-1.10.2.min.js"></script>
+        <script language="javascript" type="text/javascript" src="public/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="public/css/style.css">
 
     </head>
     <body>
+        <div class="container">
+            <h1>Hallo</h1>
+        </div>
 
-        <h1>Hallo</h1>
 
         <?php include_once('application/boot.php');?>
 <!--        <pre>-->
