@@ -28,9 +28,12 @@ class Database_Handler {
         $sql = "SELECT " . $select . " FROM " . $from;
         mysql_select_db($this->db_name);
         $query = mysql_query($sql);
-        $result = mysql_fetch_array($query, MYSQL_NUM);
+        $resultArray = array();
+        while($result = mysql_fetch_array($query, MYSQL_NUM)) {
+            $resultArray[] = $result;
+        }
         mysql_close($db);
 
-        return $result;
+        return $resultArray;
     }
 }
