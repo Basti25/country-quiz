@@ -36,4 +36,12 @@ class Database_Handler {
 
         return $resultArray;
     }
+    // value in this form => ('INSERT1','INSERT2', 'INSERT3')
+    function makeEntry($tableName, $value) {
+        $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        $sql = "INSERT INTO " . $tableName . " VALUES " . $value;
+        mysql_select_db($this->db_name);
+        mysql_query($sql);
+        mysql_close($db);
+    }
 }
