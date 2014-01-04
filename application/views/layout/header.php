@@ -5,7 +5,7 @@
 
         <link rel="stylesheet" type="text/css" href="http://www.country-quiz.wizmo.de/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="http://www.country-quiz.wizmo.de/public/css/style.css">
-
+        <title>Country-Quiz</title>
     </head>
     <body>
         <div class="container">

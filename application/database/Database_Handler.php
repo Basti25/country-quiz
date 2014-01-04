@@ -23,13 +23,16 @@ class Database_Handler {
         $this->db_name = $config['db_name'];
     }
 
-    function getEntry($from, $select = '*') {
+    function getEntry($from, $select = '*', $where = null) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "SELECT " . $select . " FROM " . $from;
+        if(isset($where) && !empty($where)) {
+            $sql .= ' WHERE ' . $where;
+        }
         mysql_select_db($this->db_name);
         $query = mysql_query($sql);
         $resultArray = array();
-        while($result = mysql_fetch_array($query, MYSQL_NUM)) {
+        while($result = mysql_fetch_array($query, MYSQL_ASSOC)) {
             $resultArray[] = $result;
         }
         mysql_close($db);
@@ -40,6 +43,15 @@ class Database_Handler {
     function makeEntry($tableName, $value) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "INSERT INTO " . $tableName . " VALUES " . $value;
+        mysql_select_db($this->db_name);
+        mysql_query($sql);
+        mysql_close($db);
+    }
+
+    function updateEntry($tableName, $value, $where) {
+        $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        $sql = "UPDATE " . $tableName . " SET " . $value . " WHERE " . $where;
+        error_log($sql);
         mysql_select_db($this->db_name);
         mysql_query($sql);
         mysql_close($db);
