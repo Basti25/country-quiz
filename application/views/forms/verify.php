@@ -2,6 +2,9 @@
 <?php include($config['rootpath'] . 'application/views/layout/header.php') ?>
 <div class="container">
 
+<?php // prüft ob das Formular abgesendet wurde oder nicht.
+      // Abgesendet: schaltet die Fragen frei
+?>
 <?php if(isset($_POST['submit'])): ?>
     <?php foreach($_POST['verify'] as $verify): ?>
         <?php $dbH->updateEntry($config['db_table_question'], 'is_live=1', 'id=' . $verify) ?>
@@ -9,6 +12,7 @@
     Neue Fragen hinzugefügt.
 <?php endif; ?>
 
+    <?php // Holt die nicht freigeschalteten Fragen aus der DB und gibt diese in einer Auswahl aus. ?>
     <?php $notVerfifiedQuestions = $dbH->getEntry($config['db_table_question'], '*', 'is_live is NULL') ?>
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
     <?php foreach($notVerfifiedQuestions as $notVerfifiedQuestion):?>
@@ -28,4 +32,5 @@
         <input type="submit" name="submit" value="freischalten"/>
     </form>
 </div>
+
 <?php include($config['rootpath'] . 'application/views/layout/footer.php') ?>

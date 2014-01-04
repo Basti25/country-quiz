@@ -9,6 +9,8 @@
         $y = $_POST['y'];
         $send = false;
 
+        // prüft ob die wichtigen Felder des Fragenformulars gefüllt sind.
+
         if(isset($_POST['submit'])) {
             if(empty($frage)) {
                 echo 'Es muss eine Frage eingegeben werden.';
@@ -19,6 +21,7 @@
                 $send = true;
             }
             if(!empty($frage) && !empty($y) && !empty($x)) {
+                // Wenn das Formular vollständig war dann wird die Frage in die DB geschrieben.
                 $frage = '\'' . $frage . '\'';
                 $antwort = '\'' . $antwort . '\'';
                 $dbH->makeEntry($config['db_table_question'] . ' (level, question, answer , X, Y)', "($level, $frage, $antwort, $x, $y)");
@@ -27,6 +30,8 @@
         } else {
             $send = true;
         }
+
+        // Wenn ein Feld fehlt oder das Formular zum ersten Mal aufgerufen wird, dann wird das Formular ausgegeben
         if($send): ?>
 
             <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">

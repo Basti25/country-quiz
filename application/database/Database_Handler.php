@@ -16,6 +16,7 @@ class Database_Handler {
 
     var $db_name;
 
+    // Verbindungsdaten zur Datenbank werden aus der Config in das Objekt geschrieben.
     function setConnectionData($config) {
         $this->db_hostname = $config['db_host'];
         $this->db_user = $config['db_user'];
@@ -23,6 +24,13 @@ class Database_Handler {
         $this->db_name = $config['db_name'];
     }
 
+    /**
+     * Holt einen Eintrag aus einer Tabelle der Datenbank.
+     * $from = welche Tabelle gewählt werden soll
+     * $select = welche Einträge gewählt werden sollen
+     * $where = zusätzliche Bedingungen
+     *
+     */
     function getEntry($from, $select = '*', $where = null) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "SELECT " . $select . " FROM " . $from;
@@ -39,7 +47,13 @@ class Database_Handler {
 
         return $resultArray;
     }
-    // value in this form => ('INSERT1','INSERT2', 'INSERT3')
+
+    /**
+     * Macht einen Eintrag in eine Tabelle der Datenbank.
+     * $tableName = welche Tabelle gewählt werden soll
+     * $value = welche Werte der Eintrag haben soll => ('INSERT1','INSERT2', 'INSERT3')
+     *
+     */
     function makeEntry($tableName, $value) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "INSERT INTO " . $tableName . " VALUES " . $value;
@@ -48,6 +62,13 @@ class Database_Handler {
         mysql_close($db);
     }
 
+    /**
+     * Macht eine Änderung in einer Tabelle der Datenbank.
+     * $tableName = welche Tabelle gewählt werden soll
+     * $value = welche Werte der Eintrag haben soll
+     * $where = welche zusätzlichen Bedingungen zutreffen sollen
+     *
+     */
     function updateEntry($tableName, $value, $where) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "UPDATE " . $tableName . " SET " . $value . " WHERE " . $where;

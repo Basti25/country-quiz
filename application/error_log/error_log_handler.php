@@ -1,4 +1,6 @@
-<?php ini_set('error_reporting', E_ALL);
+<?php
+// initiiert das Error Handling und die Möglichkeit ein erreichbares Errorlog zu nutzen.
+ini_set('error_reporting', E_ALL);
 error_reporting(E_ALL);
 ini_set('log_errors',TRUE);
 ini_set('html_errors',FALSE);
