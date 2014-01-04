@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 2.11.11.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 03. Jan 2014 um 19:49
--- Server Version: 5.6.11
--- PHP-Version: 5.5.3
+-- Host: localhost:3306
+-- Erstellungszeit: 04. Januar 2014 um 09:41
+-- Server Version: 4.1.13
+-- PHP-Version: 4.4.7
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -17,10 +16,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Datenbank: `country-quiz`
+-- Datenbank: `usr_wiz03103_1`
 --
-CREATE DATABASE IF NOT EXISTS `country-quiz` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `country-quiz`;
 
 -- --------------------------------------------------------
 
@@ -30,12 +27,12 @@ USE `country-quiz`;
 
 DROP TABLE IF EXISTS `highscore`;
 CREATE TABLE IF NOT EXISTS `highscore` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `score` int(11) NOT NULL,
-  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=8 ;
+  `id` int(11) NOT NULL auto_increment,
+  `user` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `score` int(11) NOT NULL default '0',
+  `time` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Daten für Tabelle `highscore`
@@ -58,15 +55,15 @@ INSERT INTO `highscore` (`id`, `user`, `score`, `time`) VALUES
 
 DROP TABLE IF EXISTS `question`;
 CREATE TABLE IF NOT EXISTS `question` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `level` int(11) NOT NULL,
-  `question` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `answer` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `X` double NOT NULL,
-  `Y` double NOT NULL,
-  `is_live` tinyint(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=9 ;
+  `id` int(11) NOT NULL auto_increment,
+  `level` int(11) NOT NULL default '0',
+  `question` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `answer` varchar(255) collate utf8_unicode_ci NOT NULL default '',
+  `X` double NOT NULL default '0',
+  `Y` double NOT NULL default '0',
+  `is_live` tinyint(1) default NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Daten für Tabelle `question`
@@ -77,7 +74,3 @@ INSERT INTO `question` (`id`, `level`, `question`, `answer`, `X`, `Y`, `is_live`
 (2, 1, 'Wo liegt London?', 'Großbritannien', 51.508742, -0.127258, 1),
 (3, 1, 'Wo liegt Paris', 'Frankreich', 48.853873, 2.350616, 1),
 (4, 1, 'Wo liegt Brüssel?', 'Belgien', 50.833698, 4.337768, NULL);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
