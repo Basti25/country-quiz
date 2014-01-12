@@ -1,5 +1,14 @@
 /*
-Datei ist für eigene Anpassungen am CSS da.
+Datei ist für eigene Stylevorgaben da.
 Bootstrapanpassungen werden hier auch reingeschrieben.
-Die Datei wird nach der Bootstrap.css eingebunden und kann die Änderungen von Bootstrap überschreiben.
+Die Datei wird nach der Bootstrap.css eingebunden und überschreibt die Änderungen von Bootstrap.
 */
+
+
+.header {
+
+}
+
+.footer {
+
+}

@@ -8,6 +8,6 @@
         <title>Country-Quiz</title>
     </head>
     <body>
-        <div class="container">
+        <div class="header">
             <h1>Hallo</h1>
         </div>
