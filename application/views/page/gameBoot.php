@@ -17,6 +17,7 @@
 <?php $_SESSION['game']['rounds'] = $rounds; ?>
 <?php $_SESSION['game']['questions'] = $result; ?>
 <?php $_SESSION['game']['score'] = ''; ?>
+<?php $_SESSION['game']['result'] = 0; ?>
 <?php $_SESSION['game']['loaded'] = 0; ?>
 
 <?php include('game.php'); ?>

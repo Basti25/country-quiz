@@ -1,9 +1,9 @@
-<?php //// TODO Wenn eine Antwort gegeben wurde und abgeschickt wurde wird hier der Punktestand berechnet und in die Session gespeichert. ?>
-<!---->
-<!--Dein Punktestand:-->
-<?php //foreach ($_SESSION['game']['score'] as $score) {
-//    $result = $result + $score;
-//}
-//?>
-<?php //echo $result; ?>
-<?php //$_SESSION['game']['result'] = $result; ?>
+<?php
+    $_SESSION['game']['result'] = $_SESSION['game']['result'] + $game->score(
+            $_POST['answerX'],
+            $_POST['answerY'],
+            $_POST['solutionX'],
+            $_POST['solutionY'],
+            $config['distanceScore']
+        );?>
+<?php echo $_SESSION['game']['result']; ?>
