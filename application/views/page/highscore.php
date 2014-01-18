@@ -1,30 +1,20 @@
-<?php //$dbH->getEntry('highscore') ?>
+<?php $highscoreList = $dbH->getEntry('highscore', '*', '', 'score DESC') ?>
 
 Highscore Tabelle
-<table>
+<table class="table table-striped">
     <tr>
         <td>Rang</td>
         <td>Benutzername</td>
         <td>Pkt.</td>
     </tr>
+<?php foreach($highscoreList as $key => $highscoreEntry): ?>
     <tr>
-        <td>1</td>
-        <td>Walther</td>
-        <td>10400</td>
+        <td><?php echo ++$key; ?>.</td>
+        <td><?php echo $highscoreEntry['user']?></td>
+        <td><?php echo $highscoreEntry['score']?></td>
     </tr>
-    <tr>
-        <td>2</td>
-        <td>Sebastian</td>
-        <td>10400</td>
-    </tr>
-    <tr>
-        <td>3</td>
-        <td>Diana</td>
-        <td>10400</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>Gamer007</td>
-        <td>4100</td>
-    </tr>
+    <?php if($key == $config['highscore_list_entry']): ?>
+        <?php break; ?>
+    <?php endif; ?>
+<?php endforeach; ?>
 </table>

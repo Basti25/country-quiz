@@ -1,21 +1,18 @@
 <?php session_start(); ?>
-<pre>
-    <?php echo print_r($_POST ,1)?>
-</pre>
 
 <?php //session_unset();?>
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
 <?php include('application/views/layout/header.php') ?>
 
-<?php if(isset($_POST['submit']) && $_POST['submit'] = 'L&ouml;sung abgeben'): ?>
+<?php if(isset($_POST['submit'])): ?>
     <?php $_SESSION['game']['actualRound'] = $_SESSION['game']['actualRound'] + 1; ?>
     <?php echo $_SESSION['game']['actualRound']; ?>
 <?php endif; ?>
 
 <div class="container">
     <div class="col-lg-2 col-md-2 col-sm-2">
-<?php  // TODO Ausgabe des Levels der Frage. ?>
         Levelanzeige
+        <?php include('application/views/page/level.php'); ?>
 	</div>
     <div class="col-lg-8 col-md-8 col-sm-8" >
         <div id="map_canvas"></div>
@@ -27,7 +24,6 @@
         <?php endif; ?>
     </div>
     <div class="col-lg-2 col-md-2 col-sm-2">
-        <?php // TODO Ausgabe der Highscore Liste?>
         <?php include('application/views/page/highscore.php'); ?>
 
         Dein Punktestand:

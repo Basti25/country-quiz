@@ -1,0 +1,1 @@
+<?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['level'] ?>

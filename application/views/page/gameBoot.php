@@ -3,7 +3,7 @@
 
 <?php $rounds = $config['game_rounds']; ?>
 <?php  // TODO Ausgabe von Fragen von den verschiedenen Leveln und zusammenführen als Fragenarray?>
-<?php $questions = $dbH->getEntry('question','*','is_live = 1') ?>
+<?php $questions = $dbH->getEntry('question', '*', 'is_live = 1') ?>
 
 <?php $randomKeys = array_rand($questions, $rounds)?>
 

@@ -29,13 +29,20 @@ class Database_Handler {
      * $from = welche Tabelle gewählt werden soll
      * $select = welche Einträge gewählt werden sollen
      * $where = zusätzliche Bedingungen
-     *
+     * @param $from
+     * @param string $select
+     * @param null $where
+     * @param null $order
+     * @return array
      */
-    function getEntry($from, $select = '*', $where = null) {
+    function getEntry($from, $select = '*', $where = null, $order = null) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         $sql = "SELECT " . $select . " FROM " . $from;
         if(isset($where) && !empty($where)) {
             $sql .= ' WHERE ' . $where;
+        }
+        if(isset($order) && !empty($order)) {
+            $sql .= ' ORDER BY ' . $order;
         }
         mysql_select_db($this->db_name);
         $query = mysql_query($sql);

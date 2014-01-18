@@ -18,6 +18,11 @@ class Game {
         $distance = pow($X, 2) + pow($Y, 2);
         $distance = sqrt($distance);
         $result = $distanceScore - $distance;
+
+        if($result < 0) {
+            $result = 0;
+        }
+
         return $result;
     }
 } 

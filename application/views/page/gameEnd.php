@@ -1,6 +1,6 @@
 <?php
     $name = $_POST['name'];
-    $score = 222;
+    $score = $_SESSION['game']['result'];
     $send = false;
 
     if (isset($_POST['highscore'])) {
