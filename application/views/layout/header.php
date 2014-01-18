@@ -41,8 +41,8 @@
                     position: location,
                     map: map
                 });
-                document.getElementById('answerY').value = location.lat();
-                document.getElementById('answerX').value = location.lng();
+                document.getElementById('answerX').value = location.lat();
+                document.getElementById('answerY').value = location.lng();
                 markersArray.push(marker);
             }
 
