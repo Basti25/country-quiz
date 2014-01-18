@@ -8,13 +8,15 @@
 <?php $randomKeys = array_rand($questions, $rounds)?>
 
 <?php $result = array();?>
+<?php $result[0] = 'first'; ?>
 <?php foreach($randomKeys as $key): ?>
     <?php $result[] = $questions[$key]; ?>
 <?php endforeach; ?>
 
-<?php $_SESSION['game']['actualRound'] = 0; ?>
+<?php $_SESSION['game']['actualRound'] = 1; ?>
 <?php $_SESSION['game']['rounds'] = $rounds; ?>
 <?php $_SESSION['game']['questions'] = $result; ?>
+<?php $_SESSION['game']['score'] = ''; ?>
 <?php $_SESSION['game']['loaded'] = 0; ?>
 
 <?php include('game.php'); ?>

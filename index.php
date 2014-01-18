@@ -1,10 +1,18 @@
 <?php session_start(); ?>
+<pre>
+    <?php echo print_r($_POST ,1)?>
+</pre>
+
 <?php //session_unset();?>
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
 <?php include('application/views/layout/header.php') ?>
 
+<?php // TODO Übergabe der Variablen und Ausgabe des Ergebnisses (Modal?). Ergebnis wird in die Session gespeichert. ?>
 
-<?php if($_SESSION['game']['loaded'] == 1 && $_SESSION['game']['actualRound'] >= $_SESSION['game']['rounds'])?>
+<?php if(isset($_POST['submit']) && $_POST['submit'] = 'L&ouml;sung abgeben'): ?>
+    <?php $_SESSION['game']['actualRound'] = $_SESSION['game']['actualRound'] + 1; ?>
+    <?php echo $_SESSION['game']['actualRound']; ?>
+<?php endif; ?>
 
 <div class="container">
     <div class="col-lg-2 col-md-2 col-sm-2">
@@ -50,15 +58,10 @@
                 <td>4100</td>
             </tr>
         </table>
-        <?php // TODO Wenn eine Antwort gegeben wurde und abgeschickt wurde wird hier der Punktestand berechnet und in die Session gespeichert. ?>
         <?php if(isset($_POST['submit'])): ?>
-            ###
+            <?php include('application/views/page/score.php'); ?>
         <?php endif; ?>
     </div>
 </div>
 
 <?php include('application/views/layout/footer.php') ?>
-
-
-<?php // TODO Über ein Formular wird ein Neuladen der Seite erzwungen und die Ergebnisse an den Server geschickt.
-      // Nachdem die Rundenzahl voll ist wird das Resultat ausgegeben und man soll seinen Namen eingeben ?>

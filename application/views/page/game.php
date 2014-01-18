@@ -19,7 +19,7 @@
             <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['X']?>,
             <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['Y']?>
                 );">
-                L&uml;sung anzeigen
+                L&ouml;sung anzeigen
             </button>
 
             <form style="display: none;" id="solutionForm" method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
@@ -35,9 +35,7 @@
             <?php // TODO Übergabe der Variablen und Ausgabe des Ergebnisses (Modal?). Ergebnis wird in die Session zwischengespeichert. ?>
         <?php endif; ?>
     </div>
-    <?php  // TODO Nach bestätigen des Buttons zur Abgabe wird der Counter hoch gezählt. ?>
-    <?php $_SESSION['game']['actualRound'] = $_SESSION['game']['actualRound'] + 1?>
 <?php else: ?>
-    Spielende
+    <?php include('gameEnd.php') ?>
     <?php // TODO Ende des Spiels. Ausgabe des Resultsats und Eingabe eines Names. Wurde der Name eingegeben wird das Ergebnis in die DB gespeichert. Löschen der Session. ?>
 <?php endif; ?>
