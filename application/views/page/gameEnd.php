@@ -11,9 +11,7 @@
         if (!empty($name)) {
             $dbH->makeEntry('highscore' . ' (user, score)', "('$name', '$score')");
             session_unset(); ?>
-            <div class="btn btn-primary" onclick="window.location.reload();">
-                Noch eine Runde?
-            </div>
+            <a href="http://www.country-quiz.wizmo.de/" class="btn btn-primary">Noch eine Runde?</a>
             <?php
         }
     } else {

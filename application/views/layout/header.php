@@ -76,3 +76,6 @@
                 <h1>Hallo</h1>
             </div>
         </div>
+
+
+<?php // TODO Styling der Ausgabe und auslagern des JS Codes ?>

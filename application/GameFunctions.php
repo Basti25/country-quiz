@@ -14,6 +14,9 @@ class Game {
         if($answerX == 0 && $answerY == 0) {
             $distanceScore = 0;
         }
+        if($solutionX == 0 && $solutionY == 0) {
+            $distanceScore = 0;
+        }
 
         $distance = pow($X, 2) + pow($Y, 2);
         $distance = sqrt($distance);
@@ -22,7 +25,6 @@ class Game {
         if($result < 0) {
             $result = 0;
         }
-
         return $result;
     }
 } 

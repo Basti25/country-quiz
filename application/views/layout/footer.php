@@ -5,3 +5,6 @@
     </div>
     </body>
 </html>
+
+
+<?php // Styling der Ausgabe ?>

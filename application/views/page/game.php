@@ -33,3 +33,6 @@
 <?php else: ?>
     <?php include('gameEnd.php') ?>
 <?php endif; ?>
+
+
+<?php //TODO Styling der Ausgabe ?>
