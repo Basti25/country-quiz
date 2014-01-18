@@ -41,24 +41,36 @@
                     position: location,
                     map: map
                 });
+                document.getElementById('answerY').value = location.lat();
+                document.getElementById('answerX').value = location.lng();
                 markersArray.push(marker);
             }
 
             function placeAnswerMarker(x,y) {
+                var pinColor = "008000";
+                var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor,
+                    new google.maps.Size(21, 34),
+                    new google.maps.Point(0,0),
+                    new google.maps.Point(10, 34));
+
                 var marker = new google.maps.Marker({
                     position: new google.maps.LatLng(x,y),
-                    map: map
+                    map: map,
+                    icon: pinImage,
+                    zIndex: 1000,
+                    animation: google.maps.Animation.DROP
                 });
                 markersArray.push(marker);
+                google.maps.event.clearListeners(map, 'click');
+                document.getElementById('solutionForm').style.display = 'block';
             }
         </script>
-
 
         <link rel="stylesheet" type="text/css" href="http://www.country-quiz.wizmo.de/public/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="http://www.country-quiz.wizmo.de/public/css/style.css">
         <title>Country-Quiz</title>
     </head>
-    <body onload="initialize()">
+    <body onload="initialize();">
         <div class="header">
             <div class="container">
                 <h1>Hallo</h1>

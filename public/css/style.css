@@ -12,3 +12,7 @@ Die Datei wird nach der Bootstrap.css eingebunden und kann die Änderungen von B
 .level {
     background: green;
 }
+#gameStarter {
+    position: relative;
+    text-align: center;
+}

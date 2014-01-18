@@ -1,18 +1,9 @@
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
-<?php include($config['rootpath'] . 'application/views/layout/header.php') ?>
-
-<?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
-<?php include('application/views/layout/header.php') ?>
 
 
-<?php session_start(); ?>
 <?php $rounds = $config['game_rounds']; ?>
+<?php  // TODO Ausgabe von Fragen von den verschiedenen Leveln und zusammenführen als Fragenarray?>
 <?php $questions = $dbH->getEntry('question','*','is_live = 1') ?>
-
-<?php $_SESSION['game']['actualRound'] = 0; ?>
-<?php $_SESSION['game']['rounds'] = $rounds; ?>
-<?php $_SESSION['game']['questions'] = $questions; ?>
-<?php //$_SESSION['game']['result'] ; ?>
 
 <?php $randomKeys = array_rand($questions, $rounds)?>
 
@@ -21,10 +12,15 @@
     <?php $result[] = $questions[$key]; ?>
 <?php endforeach; ?>
 
-
-
-<pre>
-    <?php echo print_r($_SESSION,1)?>
-</pre>
+<?php $_SESSION['game']['actualRound'] = 0; ?>
+<?php $_SESSION['game']['rounds'] = $rounds; ?>
+<?php $_SESSION['game']['questions'] = $result; ?>
+<?php $_SESSION['game']['loaded'] = 0; ?>
 
 <?php include('game.php'); ?>
+
+<div id="gameStarter">
+    <div class="btn btn-primary" onclick="window.location.reload();">
+        Spiel starten
+    </div>
+</div>
