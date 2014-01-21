@@ -56,4 +56,5 @@ function placeAnswerMarker(x,y) {
     markersArray.push(marker);
     google.maps.event.clearListeners(map, 'click');
     document.getElementById('solutionForm').style.display = 'block';
+    document.getElementById('answer').style.display = 'block';
 }

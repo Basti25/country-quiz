@@ -1,10 +1,5 @@
 <?php if($_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
     <div id="gameContainer">
-        <div id="question">
-            <?php if($_SESSION['game']['loaded'] == 1): ?>
-                <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['question']?>
-            <?php endif; ?>
-        </div>
         <div id="answer">
             <?php if($_SESSION['game']['loaded'] == 1): ?>
                 <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['answer']?>
@@ -18,7 +13,7 @@
                 L&ouml;sung speichern
             </button>
 
-            <form style="display: none;" id="solutionForm" method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
+            <form id="solutionForm" method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
 
                 <input type="hidden" id="answerX" name="answerX" value="0">
                 <input type="hidden" id="answerY" name="answerY" value="0">

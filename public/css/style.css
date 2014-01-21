@@ -9,10 +9,13 @@ Die Datei wird nach der Bootstrap.css eingebunden und kann die Änderungen von B
     width:100%;
     height: 500px;
 }
-.level {
-    background: green;
-}
 #gameStarter {
     position: relative;
     text-align: center;
+}
+#answer {
+    display: none;
+}
+#solutionForm {
+    display: none;
 }

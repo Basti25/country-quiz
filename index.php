@@ -15,6 +15,11 @@
         <?php include('application/views/page/level.php'); ?>
 	</div>
     <div class="col-lg-8 col-md-8 col-sm-8" >
+        <div id="question">
+            <?php if($_SESSION['game']['loaded'] == 1): ?>
+                <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['question']?>
+            <?php endif; ?>
+        </div>
         <div id="map_canvas"></div>
         <?php if(isset($_SESSION['game']['loaded']) && $_SESSION['game']['loaded'] == 1): ?>
             <?php include('application/views/page/game.php'); ?>

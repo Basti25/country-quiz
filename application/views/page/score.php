@@ -10,3 +10,8 @@
 <?php endif; ?>
 
 <?php echo (int) $_SESSION['game']['result']; ?>
+<?php   $_POST['answerX'] = 0;
+        $_POST['answerY'] = 0;
+        $_POST['solutionX'] = 0;
+        $_POST['solutionY']= 0;
+?>
