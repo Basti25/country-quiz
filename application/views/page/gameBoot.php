@@ -12,6 +12,7 @@
 <?php $randomKeys = array()?>
 
 <?php foreach($questions as $key => $questionLevel): ?>
+    <?php // $questionsPerLevel muss die 4 ersetzen wenn genug Fragen in der DB sind. ?>
     <?php $randomKeys[] = array_rand($questionLevel, 4) ?>
 <?php endforeach; ?>
 
