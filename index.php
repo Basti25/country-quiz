@@ -6,7 +6,6 @@
 
 <?php if(isset($_POST['submit'])): ?>
     <?php $_SESSION['game']['actualRound'] = $_SESSION['game']['actualRound'] + 1; ?>
-    <?php echo $_SESSION['game']['actualRound']; ?>
 <?php endif; ?>
 
 <div class="container">
@@ -16,7 +15,7 @@
 	</div>
     <div class="col-lg-8 col-md-8 col-sm-8" >
         <div id="question">
-            <?php if($_SESSION['game']['loaded'] == 1): ?>
+            <?php if($_SESSION['game']['loaded'] == 1 && $_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
                 <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['question']?>
             <?php endif; ?>
         </div>
