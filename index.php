@@ -5,14 +5,11 @@
 <?php include('application/views/layout/header.php') ?>
 
 <?php if(isset($_POST['submit'])): ?>
+    <?php include('application/views/page/score.php'); ?>
     <?php $_SESSION['game']['actualRound'] = $_SESSION['game']['actualRound'] + 1; ?>
 <?php endif; ?>
 
 <div class="container">
-    <div class="col-lg-2 col-md-2 col-sm-2">
-        Levelanzeige
-        <?php include('application/views/page/level.php'); ?>
-	</div>
     <div class="col-lg-8 col-md-8 col-sm-8" >
         <div id="question">
             <?php if($_SESSION['game']['loaded'] == 1 && $_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
@@ -27,12 +24,12 @@
             <?php $_SESSION['game']['loaded'] = 1 ?>
         <?php endif; ?>
     </div>
-    <div class="col-lg-2 col-md-2 col-sm-2">
+    <div class="col-lg-4 col-md-4 col-sm-4">
         <?php include('application/views/page/highscore.php'); ?>
 
         Dein Punktestand:
         <?php if($_SESSION['game']['actualRound'] > 1 && $_SESSION['game']['loaded'] == 1): ?>
-            <?php include('application/views/page/score.php'); ?>
+            <?php echo (int) $_SESSION['game']['result']; ?>
         <?php endif; ?>
     </div>
 </div>

@@ -7,7 +7,7 @@
  */
 
 class Game {
-    function score($answerX, $answerY, $solutionX, $solutionY, $distanceScore) {
+    function score($answerX, $answerY, $solutionX, $solutionY, $distanceScore, $factor) {
         $X = $solutionX - $answerX;
         $Y = $solutionY - $answerY;
 
@@ -20,7 +20,7 @@ class Game {
 
         $distance = pow($X, 2) + pow($Y, 2);
         $distance = sqrt($distance);
-        $result = $distanceScore - $distance;
+        $result = ($distanceScore * (0.5 * $factor)) - $distance;
 
         if($result < 0) {
             $result = 0;

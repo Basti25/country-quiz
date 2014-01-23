@@ -3,7 +3,6 @@
 
 <?php $rounds = $config['game_rounds']; ?>
 <?php $questionsPerLevel = $config['questions_per_level']; ?>
-<?php  // TODO Ausgabe von Fragen von den verschiedenen Leveln und zusammenführen als Fragenarray?>
 <?php $questions = array() ?>
 <?php $questions[] = $dbH->getEntry('question', '*', 'is_live = 1 AND level = 1') ?>
 <?php $questions[] = $dbH->getEntry('question', '*', 'is_live = 1 AND level = 2') ?>
@@ -12,19 +11,19 @@
 <?php $randomKeys = array()?>
 
 <?php foreach($questions as $key => $questionLevel): ?>
-    <?php // $questionsPerLevel muss die 4 ersetzen wenn genug Fragen in der DB sind. ?>
-    <?php $randomKeys[] = array_rand($questionLevel, 4) ?>
+    <?php $randomKeys[] = array_rand($questionLevel, $questionsPerLevel) ?>
 <?php endforeach; ?>
 
 <?php $result = array();?>
-<?php $result[0] = 'first'; ?>
-<?php foreach($questions as $questionArray): ?>
-    <?php foreach($randomKeys as $randomArray): ?>
-        <?php foreach($randomArray as $key): ?>
-            <?php $result[] = $questionArray[$key]; ?>
-        <?php endforeach; ?>
+<?php foreach($randomKeys as $key => $randomArray): ?>
+    <?php foreach($randomArray as $rndQuestions): ?>
+        <?php $result[] = $questions[$key][$rndQuestions]; ?>
     <?php endforeach; ?>
 <?php endforeach; ?>
+
+<?php shuffle($result); ?>
+
+<?php array_unshift($result, 'first')?>
 
 <?php $_SESSION['game']['actualRound'] = 1; ?>
 <?php $_SESSION['game']['rounds'] = $rounds; ?>
