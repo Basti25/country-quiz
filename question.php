@@ -34,21 +34,57 @@
         // Wenn ein Feld fehlt oder das Formular zum ersten Mal aufgerufen wird, dann wird das Formular ausgegeben
         if($send): ?>
 
-            <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>">
-                <label for="level">Schwierigkeitsgrad(Level) der Frage:</label>
-                <select id="level" name="level">
-                    <option value="1" selected>1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                </select>
-                <label for="frage">Frage:</label>
-                <textarea id="frage" name="frage"></textarea>
-                <label for="antwort">Antwort (optional):</label>
-                <input type="text" id="antwort" name="antwort">
-                <label for="x">X Koordinate:</label>
-                <input type="text" id="x" name="x">
-                <label for="y">Y Koordinate:</label>
-                <input type="text" id="y" name="y">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF']?>" class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <label for="level">Schwierigkeitsgrad(Level) der Frage:</label>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <select id="level" name="level">
+                            <option value="1" selected>1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                    <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <label for="frage">Frage:</label>
+
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <textarea id="frage" name="frage" class="form-control"></textarea>
+                    </div>
+                    <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <label for="antwort">Antwort (optional):</label>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input type="text" id="antwort" name="antwort" class="form-control">
+                    </div>
+                    <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <label for="x">X Koordinate:</label>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input type="text" id="x" name="x" class="form-control">
+                    </div>
+                    <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-4 col-md-4 col-sm-4">
+                        <label for="y">Y Koordinate:</label>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6">
+                        <input type="text" id="y" name="y" class="form-control">
+                    </div>
+                    <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
+                </div>
 
                 <input type="submit" name="submit" value="senden"/>
             </form>

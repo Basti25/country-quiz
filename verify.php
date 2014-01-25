@@ -1,3 +1,33 @@
+<?php $authed_users = array("test" => "test");
+
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+
+    header("WWW-Authenticate: Basic realm='Wizmo'");
+
+    header("HTTP/1.0 401 Unauthorized");
+
+    die('restricted area.');
+
+} else {
+
+    if (($authed_users[$_SERVER['PHP_AUTH_USER']] != $_SERVER['PHP_AUTH_PW'])
+
+        || ($authed_users[$_SERVER['PHP_AUTH_USER']] == "" || $_SERVER['PHP_AUTH_PW'] == "")
+
+    ) {
+
+        unset($_SERVER['PHP_AUTH_PW']);
+
+        unset($_SERVER['PHP_AUTH_USER']);
+
+        echo('Der Login war fehlerhaft, Zugriff verweigert.');
+
+        exit();
+
+    }
+
+}; ?>
+
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
 <?php include($config['rootpath'] . 'application/views/layout/header.php') ?>
 <div class="container">
