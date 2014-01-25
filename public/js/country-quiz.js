@@ -9,7 +9,7 @@ var map;
 function initialize() {
     var myLatlng = new google.maps.LatLng(30,10);
     var mapOptions = {
-        zoom: 2,
+        zoom: 3,
         center: myLatlng,
         disableDefaultUI: true,
         scrollwheel: false,
