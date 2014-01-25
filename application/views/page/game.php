@@ -6,7 +6,7 @@
             <?php endif; ?>
         </div>
         <?php if($_SESSION['game']['loaded'] == 1): ?>
-            <button class="btn btn-primary"onclick="placeAnswerMarker(
+            <button id="placeAnswerMarker" class="btn btn-primary"onclick="placeAnswerMarker(
             <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['X']?>,
             <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['Y']?>
                 );">
@@ -20,8 +20,7 @@
                 <input type="hidden" id="solutionX" name="solutionX" value="<?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['X']?>">
                 <input type="hidden" id="solutionY" name="solutionY" value="<?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['Y']?>">
 
-
-                <input type="submit" name="submit" value="weiter"/>
+                <input type="submit" name="submit" class="btn btn-primary" value="weiter"/>
             </form>
         <?php endif; ?>
     </div>

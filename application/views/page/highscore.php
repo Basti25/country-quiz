@@ -1,7 +1,6 @@
 <?php $highscoreList = $dbH->getEntry('highscore', '*', '', 'score DESC') ?>
 
-Highscore Tabelle
-<table class="table table-striped">
+<table class="table table-condensed">
     <tr>
         <td>Rang</td>
         <td>Benutzername</td>

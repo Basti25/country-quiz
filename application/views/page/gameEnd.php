@@ -19,11 +19,13 @@
     }
 ?>
 <?php if($send):?>
-    <form method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
+    <div class="gameEnd">
+        <form method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
 
-        <input type="submit" name="highscore" value="Highscore speichern"/>
-    </form>
+            <input type="submit" name="highscore" value="Highscore speichern"/>
+        </form>
+    </div>
 <?php endif; ?>

@@ -10,47 +10,77 @@ Die Datei wird nach der Bootstrap.css eingebunden und kann die Änderungen von B
 
 
 
+a {
+    color: black;
+}
+a:link {
 
+}
+a:visited {
 
+}
+.nav>li>a:hover, .nav>li>a:focus {
+    background: #41A128;
+    color: white;
+}
+a:active {
+
+}
 #map_canvas {
     width:100%;
     height: 500px;
-    border: 4px groove #999;
+    border: solid 5px #ffbb26;
 }
-
+.content {
+}
+.gameEnd {
+    margin-top: 10px;
+    text-align: center;
+}
 #gameStarter {
     position: relative;
     text-align: center;
 }
-
+#placeAnswerMarker {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
 #answer {
 	display: none;
 	font-size: 24px;
 	font-weight: bold;
 	text-align: center;
 }
-
 #solutionForm {
     display: none;
 }
-body {
-	background-color: #69B32D;
+#questionForm {
+    margin-top: 20px;
 }
- 
+body {
+	background-color: #41A128;
+}
 img.imgA {
 	display: block;
-    bottom: 30px;
-    margin: 20px auto 30px;
+    margin: 20px 10px 15px auto;
+}
+.impressum {
+    background: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+#highscore {
+    margin-top: 10px;
 }
 #question{
-	font-size: 24px;
+	font-size: 18px;
 	font-weight: bold;
-    border: 4px groove #999;
     border-radius: 26px;
+    text-align: center;
+    margin-top: 10px;
 }
-
 #gameContainer{
-    border: 4px groove #999;
     border-radius: 26px;
 }
 .btn.btn-primary {
@@ -74,6 +104,32 @@ img.imgA {
     border: 1px #666;
     font-weight: bold;
 }
-.footer {
-	background-color: #333;	
+.header {
+    background: #BF9B30;
+}
+.header ul.nav {
+    position: relative;
+    top: 85px;
+}
+/*Handy*/
+@media (max-width: 768px) {
+    .header ul.nav {
+        position: static;
+        top: 0;
+    }
+}
+/*SM*/
+@media (min-width: 768px) and (max-width: 992px) {
+    .container {
+        width: auto;
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+/*MD*/
+@media (min-width: 993px) and (max-width: 1200px) {
+
+}
+/*LG*/
+@media (min-width: 1201px) {
 }
