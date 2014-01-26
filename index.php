@@ -19,7 +19,7 @@
                             <?php if($_SESSION['game']['loaded'] == 1 && $_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
                                 <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['question']?>
                             <?php elseif($_SESSION['game']['actualRound'] > $_SESSION['game']['rounds']): ?>
-                                Vielen Dank fürs Mitspielen!
+                                Vielen Dank f&uuml;rs Mitspielen!
                             <?php else: ?>
                                 Willkommen!
                             <?php endif; ?>

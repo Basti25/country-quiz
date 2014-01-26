@@ -1,6 +1,6 @@
 <html>
     <head>
-        <meta charset="ISO-8859-1"/>
+        <meta charset="UTF-8"/>
         <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
         <script type="text/javascript" src="http://www.country-quiz.wizmo.de/public/js/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="http://www.country-quiz.wizmo.de/public/js/jquery-1.10.2.min.map"></script>

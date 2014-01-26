@@ -1,10 +1,5 @@
 <?php if($_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
     <div id="gameContainer">
-        <div id="answer">
-            <?php if($_SESSION['game']['loaded'] == 1): ?>
-                <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['answer']?>
-            <?php endif; ?>
-        </div>
         <?php if($_SESSION['game']['loaded'] == 1): ?>
             <button id="placeAnswerMarker" class="btn btn-primary"onclick="placeAnswerMarker(
             <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['X']?>,
@@ -23,10 +18,16 @@
                 <input type="submit" name="submit" class="btn btn-primary" value="weiter"/>
             </form>
         <?php endif; ?>
+        <div id="answer">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <?php if($_SESSION['game']['loaded'] == 1): ?>
+                        <?php echo $_SESSION['game']['questions'][$_SESSION['game']['actualRound']]['answer']?>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
     </div>
 <?php else: ?>
     <?php include('gameEnd.php') ?>
 <?php endif; ?>
-
-
-<?php //TODO Styling der Ausgabe ?>

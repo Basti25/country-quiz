@@ -37,6 +37,7 @@ class Database_Handler {
      */
     function getEntry($from, $select = '*', $where = null, $order = null) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        mysql_query("SET NAMES 'utf8'");
         $sql = "SELECT " . $select . " FROM " . $from;
         if(isset($where) && !empty($where)) {
             $sql .= ' WHERE ' . $where;
@@ -63,6 +64,7 @@ class Database_Handler {
      */
     function makeEntry($tableName, $value) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        mysql_query("SET NAMES 'utf8'");
         $sql = "INSERT INTO " . $tableName . " VALUES " . $value;
         mysql_select_db($this->db_name);
         mysql_query($sql);
@@ -78,6 +80,7 @@ class Database_Handler {
      */
     function updateEntry($tableName, $value, $where) {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        mysql_query("SET NAMES 'utf8'");
         $sql = "UPDATE " . $tableName . " SET " . $value . " WHERE " . $where;
         error_log($sql);
         mysql_select_db($this->db_name);
