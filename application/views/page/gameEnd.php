@@ -21,12 +21,16 @@
 ?>
 <?php if($send):?>
     <div class="gameEnd">
-        <form method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form method="post" action="<?php echo $_SERVER['HTTP_ORIGIN']; ?>">
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name">
 
-            <input type="submit" class="btn btn-primary" name="highscore" value="Highscore speichern"/>
-        </form>
+                    <input type="submit" class="btn btn-success" name="highscore" value="Highscore speichern"/>
+                </form>
+            </div>
+        </div>
     </div>
 <?php endif; ?>

@@ -62,6 +62,9 @@ a:active {
 #questionForm {
     margin-top: 20px;
 }
+#verifiyForm {
+    margin-top: 10px;
+}
 body {
 	background-color: #41A128;
 }
@@ -92,6 +95,15 @@ img.imgA {
     margin-top: 10px;
 }
 .btn.btn-primary {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 26px;
+    width: 200px;
+    border: 1px #666;
+    font-weight: bold;
+}
+.btn.btn-success {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;

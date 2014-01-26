@@ -92,7 +92,7 @@
                                 <div class="hidden-xs col-lg-2 col-md-2 col-sm-2"></div>
                             </div>
 
-                            <input type="submit" class="btn btn-primary" name="submit" value="senden"/>
+                            <input type="submit" class="btn btn-primary" name="submit" value="Frage einsenden"/>
                         </form>
                     <?php endif; ?>
                 </div>

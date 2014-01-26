@@ -4,7 +4,7 @@
 
 include_once('error_log/error_log_handler.php');
 require_once('database/Database_Handler.php');
-require_once('GameFunctions.php');
+require_once('Game.php');
 
 // holt die Config und speichert sie in die Variable $config
 $config = parse_ini_file("/srv/www/htdocs/wiz03103/html/application.ini", TRUE);

@@ -32,22 +32,24 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
 
         <?php // Holt die nicht freigeschalteten Fragen aus der DB und gibt diese in einer Auswahl aus. ?>
         <?php $notVerfifiedQuestions = $dbH->getEntry($config['db_table_question'], '*', 'is_live is NULL') ?>
-        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form id="verifiyForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <?php foreach($notVerfifiedQuestions as $notVerfifiedQuestion):?>
-            <input type="checkbox" value="<?php echo $notVerfifiedQuestion['id']?>" name="verify[]"/>
-            Frage:
-            <?php echo $notVerfifiedQuestion['question'] ?>
-            <br/>
-            Antwort:
-            <?php echo $notVerfifiedQuestion['answer'] ?>
-            <br/>
-            Koordinaten:
-            <?php echo $notVerfifiedQuestion['X'] ?>
-            <?php echo $notVerfifiedQuestion['Y'] ?>
-            <br/>
-
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <input type="checkbox" value="<?php echo $notVerfifiedQuestion['id']?>" name="verify[]"/>
+                    Frage:
+                    <?php echo $notVerfifiedQuestion['question'] ?>
+                    <br/>
+                    Antwort:
+                    <?php echo $notVerfifiedQuestion['answer'] ?>
+                    <br/>
+                    Koordinaten:
+                    <?php echo $notVerfifiedQuestion['X'] ?>
+                    <?php echo $notVerfifiedQuestion['Y'] ?>
+                </div>
+            </div>
         <?php endforeach; ?>
-            <input type="submit" name="submit" value="freischalten"/>
+            <input type="submit" class="btn btn-primary" name="submit" value="freischalten"/>
         </form>
     </div>
 </div>

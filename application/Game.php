@@ -20,7 +20,7 @@ class Game {
 
         $distance = pow($X, 2) + pow($Y, 2);
         $distance = sqrt($distance);
-        $result = ($distanceScore * (0.5 * $factor)) - $distance;
+        $result = ($distanceScore  - $distance) * (0.5 * $factor);
 
         if($result < 0) {
             $result = 0;
