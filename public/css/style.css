@@ -131,6 +131,12 @@ img.imgA {
     position: relative;
     top: 85px;
 }
+.navbar-toggle {
+    background: #41A128;
+}
+.navbar-toggle .icon-bar {
+    background: white;
+}
 /*Handy*/
 @media (max-width: 768px) {
     .header ul.nav {
