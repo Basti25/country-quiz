@@ -2,9 +2,9 @@
 
 <table class="table table-condensed">
     <tr>
-        <td>Rang</td>
-        <td>Benutzername</td>
-        <td>Pkt.</td>
+        <th>Rang</th>
+        <th>Benutzername</th>
+        <th>Pkt.</th>
     </tr>
 <?php foreach($highscoreList as $key => $highscoreEntry): ?>
     <tr>

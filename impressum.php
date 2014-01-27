@@ -7,15 +7,15 @@
                 <div class="impressum">
                     <h1>Impressum</h1>
                     <p>Verantwortlich f&uuml;r den Inhalt dieser Seite ist: <br/>
-                        P.R.W. <br/>
-                        Musterstra&szlig;e 19 <br/>
-                        02486 Entenhausen <br/>
+                        Fachhochschule Brandenburg <br/>
+                        Magdeburger Str. 50 <br/>
+                        14770 Brandenburg an der Havel <br/>
                         Deutschland <br/>
                     </p>
                     <p>
                         Kontakt unter: <br/>
-                        Email: muster@muster.de <br/>
-                        Telefon: 00000/00000 <br/>
+                        Email: info@fh-brandenburg.de <br/>
+                        Telefon: +49 (0) 3381 / 355 - 0 <br/>
                     </p>
                     <h3>
                         Rechtliche Hinweise:

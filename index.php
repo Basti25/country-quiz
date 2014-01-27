@@ -60,6 +60,16 @@
                                 <?php else: ?>
                                     0
                                 <?php endif; ?>
+                                <?php if($_SESSION['game']['loaded'] == 1
+                                        && $_SESSION['game']['actualRound'] <= $_SESSION['game']['rounds']): ?>
+                                    <br/>
+                                    Runde:
+                                    <?php echo $_SESSION['game']['actualRound']; ?>
+                                    /
+                                    <?php echo $_SESSION['game']['rounds']; ?>
+                                <?php else: ?>
+
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
