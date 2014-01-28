@@ -82,7 +82,21 @@ class Database_Handler {
         $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
         mysql_query("SET NAMES 'utf8'");
         $sql = "UPDATE " . $tableName . " SET " . $value . " WHERE " . $where;
-        error_log($sql);
+        mysql_select_db($this->db_name);
+        mysql_query($sql);
+        mysql_close($db);
+    }
+
+    /**
+     * Lösche einen Eintrag aus der Tabelle.
+     * $tableName = welche Tabelle gewählt werden soll
+     * $where = welcher Eintrag gelöscht werden soll.
+     *
+     */
+    function deleteEntry($tableName, $where) {
+        $db = mysql_connect($this->db_hostname, $this->db_user, $this->db_password);
+        mysql_query("SET NAMES 'utf8'");
+        $sql = "DELETE FROM " . $tableName . " WHERE " . $where;
         mysql_select_db($this->db_name);
         mysql_query($sql);
         mysql_close($db);

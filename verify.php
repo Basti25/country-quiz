@@ -1,5 +1,6 @@
 <?php $authed_users = array("test" => "test");
 
+// Loginabfrage für das Verifizierungsformular
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header("WWW-Authenticate: Basic realm='Wizmo'");
     header("HTTP/1.0 401 Unauthorized");
@@ -15,7 +16,9 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
     }
 }; ?>
 
+<?php // Einbinden der boot.php zum initalisieren und starten der wichtigsten Funktionen. ?>
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
+<?php // Lädt den Header in die Seite. ?>
 <?php include($config['rootpath'] . 'application/views/layout/header.php') ?>
 <div class="content">
     <div class="container">
@@ -27,7 +30,17 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
         <?php foreach($_POST['verify'] as $verify): ?>
             <?php $dbH->updateEntry($config['db_table_question'], 'is_live=1', 'id=' . $verify) ?>
         <?php endforeach; ?>
-        Neue Fragen hinzugefügt.
+        Neue Frage/n hinzugefügt.
+    <?php endif; ?>
+
+    <?php // prüft ob das Formular abgesendet wurde oder nicht.
+          // Abgesendet: lösche die Fragen
+    ?>
+    <?php if(isset($_POST['delete'])): ?>
+        <?php foreach($_POST['verify'] as $verify): ?>
+            <?php $dbH->deleteEntry($config['db_table_question'], 'id=' . $verify) ?>
+        <?php endforeach; ?>
+        Frage/n gelöscht.
     <?php endif; ?>
 
         <?php // Holt die nicht freigeschalteten Fragen aus der DB und gibt diese in einer Auswahl aus. ?>
@@ -49,7 +62,10 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                 </div>
             </div>
         <?php endforeach; ?>
-            <input type="submit" class="btn btn-primary" name="submit" value="freischalten"/>
+            <?php // für die Freischaltung der Fragen?>
+            <input type="submit" class="btn btn-info" name="submit" value="freischalten"/>
+            <?php // zum löschen der Fragen?>
+            <input type="submit" class="btn btn-danger" name="delete" value="löschen"/>
         </form>
     </div>
 </div>

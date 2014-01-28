@@ -1,4 +1,6 @@
+<?php // Einbinden der boot.php zum initalisieren und starten der wichtigsten Funktionen. ?>
 <?php include_once($_SERVER['DOCUMENT_ROOT'] . '/application/boot.php')?>
+<?php // Lädt den Header in die Seite. ?>
 <?php include($config['rootpath'] . 'application/views/layout/header.php') ?>
 <div class="content">
     <div class="container">
@@ -100,4 +102,5 @@
         </div>
     </div>
 </div>
+<?php // Lädt den Footer rein. ?>
 <?php include($config['rootpath'] . 'application/views/layout/footer.php') ?>

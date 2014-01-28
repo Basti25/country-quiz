@@ -7,10 +7,13 @@
  */
 
 class Game {
+
+    // Errechnet die Entfernung zweier Punkte anhand des Satz des Pythagoras.
     function score($answerX, $answerY, $solutionX, $solutionY, $distanceScore, $factor) {
         $X = $solutionX - $answerX;
         $Y = $solutionY - $answerY;
 
+        // Ist keine Antwort oder keine Lösung gegeben, gibt es keine Punkte.
         if($answerX == 0 && $answerY == 0) {
             $distanceScore = 0;
         }
@@ -18,13 +21,16 @@ class Game {
             $distanceScore = 0;
         }
 
+        // Satz des Pythagoras und Errechnung des Endergebnisses
         $distance = pow($X, 2) + pow($Y, 2);
         $distance = sqrt($distance);
         $result = ($distanceScore  - $distance) * (0.5 * $factor);
 
+        // Ist das Ergebnis negativ wird der Punktewert auf 0 gesetzt.
         if($result < 0) {
             $result = 0;
         }
+
         return $result;
     }
 } 

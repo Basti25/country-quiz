@@ -1,11 +1,7 @@
 /*
-
 Datei ist für eigene Anpassungen am CSS da.
-
 Bootstrapanpassungen werden hier auch reingeschrieben.
-
 Die Datei wird nach der Bootstrap.css eingebunden und kann die Änderungen von Bootstrap überschreiben.
-
 */
 
 
@@ -95,11 +91,13 @@ img.imgA {
 #gameStarter {
     margin-top: 10px;
 }
+.btn {
+    border-radius: 26px;
+}
 .btn.btn-primary {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 26px;
     width: 200px;
     border: 1px #666;
     font-weight: bold;
@@ -108,7 +106,6 @@ img.imgA {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	border-radius: 26px;
     width: 200px;
     border: 1px #666;
     font-weight: bold;

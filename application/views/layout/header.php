@@ -1,3 +1,5 @@
+<?php // Footer und Header wurden ausgelagert und werden bei jeder Seite includiert.
+      // Dadurch müssen sie nur an einer Stelle gepflegt werden und sind auf allen Unterseiten gleich.?>
 <html>
     <head>
         <meta charset="UTF-8"/>
@@ -16,6 +18,7 @@
     <body onload="initialize();">
         <div class="header">
             <div class="container">
+                <?php // Bootstrap Responsive Navbar?>
                 <div class="navbar-header">
                     <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
                         <span class="icon-bar"></span>
